@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MonitsManager.Presentation</name>
+    </assembly>
+    <members>
+        <member name="M:MonitsManager.Presentation.Controllers.UsersController.Get(System.Guid)">
+            <summary>
+            Get user
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.UsersController.Post(MonitsManager.Models.User.UserRequestModel)">
+            <summary>
+            Insert user
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.UsersController.Put(System.Guid,MonitsManager.Models.User.UserRequestModel)">
+            <summary>
+            Put user
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.UsersController.Delete(System.Guid)">
+            <summary>
+            Delete user
+            </summary>
+        </member>
+    </members>
+</doc>

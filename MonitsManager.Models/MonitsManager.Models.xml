@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MonitsManager.Models</name>
+    </assembly>
+    <members>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.Name">
+            <summary>
+            Name user.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.Mail">
+            <summary>
+            Mail.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.Phone">
+            <summary>
+            Phone.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.DocumentNumber">
+            <summary>
+            Document Number.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.DocumentType">
+            <summary>
+            Document Type.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserRequestModel.Password">
+            <summary>
+            Password.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.UserKey">
+            <summary>
+            UserKey.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.Name">
+            <summary>
+            Name user.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.Mail">
+            <summary>
+            Mail.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.Phone">
+            <summary>
+            Phone.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.DocumentNumber">
+            <summary>
+            Document Number.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.DocumentType">
+            <summary>
+            Document Type.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.User.UserResponseModel.Password">
+            <summary>
+            Password.
+            </summary>
+        </member>
+    </members>
+</doc>
