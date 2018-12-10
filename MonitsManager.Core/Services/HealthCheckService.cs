@@ -58,7 +58,7 @@ namespace MonitsManager.Core.Services
             }
             catch (Exception ex)
             {
-                throw new InternalServerErrorException("Not was possible insert the healthCheck");
+                throw new InternalServerErrorException("Not was possible insert the healthCheck: " + ex.Message);
             }
 
             throw new ForbbidenException("HealthCheck already exists");

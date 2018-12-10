@@ -51,9 +51,9 @@ namespace MonitsManager.Core.Services
                 if (!hasUser)
                     return _userRepository.Insert(entity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new InternalServerErrorException("Not was possible insert the user");
+                throw new InternalServerErrorException("Not was possible insert the user: " + ex.Message);
             }
 
             throw new ForbbidenException("User already exists");

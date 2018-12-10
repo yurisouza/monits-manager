@@ -88,9 +88,9 @@ namespace MonitsManager.Core.Repositories
                 _connection.Execute("INSERT INTO User (UserKey, Name, Mail, Phone, DocumentNumber, DocumentType, Password) VALUES (@UserKey, @Name, @Mail, @Phone, @DocumentNumber, @DocumentType, @Password)", entity);
                 return entity;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception(ex.Message);
             }
             finally
             {
