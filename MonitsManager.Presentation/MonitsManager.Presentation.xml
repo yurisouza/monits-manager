@@ -4,6 +4,26 @@
         <name>MonitsManager.Presentation</name>
     </assembly>
     <members>
+        <member name="M:MonitsManager.Presentation.Controllers.HealthChecksController.Get(System.Guid)">
+            <summary>
+            Get healthCheck
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.HealthChecksController.Post(MonitsManager.Models.HealthCheck.HealthCheckRequestModel)">
+            <summary>
+            Insert healthCheck
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.HealthChecksController.Put(System.Guid,MonitsManager.Models.HealthCheck.HealthCheckRequestModel)">
+            <summary>
+            Put healthCheck
+            </summary>
+        </member>
+        <member name="M:MonitsManager.Presentation.Controllers.HealthChecksController.Delete(System.Guid)">
+            <summary>
+            Delete healthCheck
+            </summary>
+        </member>
         <member name="M:MonitsManager.Presentation.Controllers.UsersController.Get(System.Guid)">
             <summary>
             Get user

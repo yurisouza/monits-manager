@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MonitsManager.Application.Interfaces;
 using MonitsManager.Models.Common;
+using MonitsManager.Models.HealthCheck;
 using MonitsManager.Models.HealthCheck.Samples;
-using MonitsManager.Models.User;
-using MonitsManager.Models.User.Samples;
 using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.Examples;
 using System;
@@ -14,46 +13,46 @@ namespace MonitsManager.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class HealthChecksController : ControllerBase
     {
-        private readonly IUserAppService _userAppService;
+        private readonly IHealthCheckAppService _healthCheckAppService;
 
-        public UsersController(IUserAppService userAppService)
+        public HealthChecksController(IHealthCheckAppService healthCheckAppService)
         {
-            _userAppService = userAppService;
+            _healthCheckAppService = healthCheckAppService;
         }
 
         /// <summary>
-        /// Get user
+        /// Get healthCheck
         /// </summary>
-        [HttpGet("{UserKey}")]
-        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(UserResponseOkModel))]
-        [SwaggerResponseExample((int)HttpStatusCode.OK, typeof(UserResponseOkSample))]
+        [HttpGet("{HealthCheckKey}")]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(HealthCheckResponseOkModel))]
+        [SwaggerResponseExample((int)HttpStatusCode.OK, typeof(HealthCheckResponseOkSample))]
         [SwaggerResponse((int)HttpStatusCode.NotFound, Type = typeof(NotFoundResponseModel))]
         [SwaggerResponseExample((int)HttpStatusCode.NotFound, typeof(HealthCheckResponseNotFoundSample))]
-        public IActionResult Get(Guid UserKey)
+        public IActionResult Get(Guid HealthCheckKey)
         {
-            var response = this._userAppService.Get(UserKey);
+            var response = this._healthCheckAppService.Get(HealthCheckKey);
             return new ObjectResult(response) { StatusCode = response.StatusCode() };
         }
 
         /// <summary>
-        /// Insert user
+        /// Insert healthCheck
         /// </summary>
         [HttpPost]
         [Consumes("application/json")]
-        [SwaggerRequestExample(typeof(UserRequestModel), typeof(UserRequestSample))]
-        [SwaggerResponse((int)HttpStatusCode.Created, Type = typeof(UserResponseCreatedModel))]
-        [SwaggerResponseExample((int)HttpStatusCode.Created, typeof(UserResponseCreatedSample))]
+        [SwaggerRequestExample(typeof(HealthCheckRequestModel), typeof(HealthCheckRequestSample))]
+        [SwaggerResponse((int)HttpStatusCode.Created, Type = typeof(HealthCheckResponseCreatedModel))]
+        [SwaggerResponseExample((int)HttpStatusCode.Created, typeof(HealthCheckResponseCreatedSample))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, Type = typeof(BadRequestResponse))]
         [SwaggerResponseExample((int)HttpStatusCode.BadRequest, typeof(HealthCheckResponseBadRequestSample))]
         [SwaggerResponse((int)HttpStatusCode.Forbidden, Type = typeof(ForbiddenResponseModel))]
         [SwaggerResponseExample((int)HttpStatusCode.Forbidden, typeof(HealthCheckResponseForbiddenSample))]
-        public IActionResult Post([FromBody] UserRequestModel userRequest)
+        public IActionResult Post([FromBody] HealthCheckRequestModel healthCheckRequest)
         {
             if (ModelState.IsValid)
             {
-                var response = _userAppService.Insert(userRequest);
+                var response = _healthCheckAppService.Insert(healthCheckRequest);
                 return new ObjectResult(response) { StatusCode = response.StatusCode() };
             }
 
@@ -62,23 +61,23 @@ namespace MonitsManager.Presentation.Controllers
         }
 
         /// <summary>
-        /// Put user
+        /// Put healthCheck
         /// </summary>
-        [HttpPut("{UserKey}")]
-        [SwaggerRequestExample(typeof(UserRequestModel), typeof(UserRequestSample))]
-        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(UserResponseOkModel))]
-        [SwaggerResponseExample((int)HttpStatusCode.OK, typeof(UserResponseOkSample))]
+        [HttpPut("{HealthCheckKey}")]
+        [SwaggerRequestExample(typeof(HealthCheckRequestModel), typeof(HealthCheckRequestSample))]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(HealthCheckResponseOkModel))]
+        [SwaggerResponseExample((int)HttpStatusCode.OK, typeof(HealthCheckResponseOkSample))]
         [SwaggerResponse((int)HttpStatusCode.NotFound, Type = typeof(NotFoundResponseModel))]
         [SwaggerResponseExample((int)HttpStatusCode.NotFound, typeof(HealthCheckResponseNotFoundSample))]
         [SwaggerResponse((int)HttpStatusCode.Forbidden, Type = typeof(ForbiddenResponseModel))]
         [SwaggerResponseExample((int)HttpStatusCode.Forbidden, typeof(HealthCheckResponseForbiddenSample))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, Type = typeof(BadRequestResponse))]
         [SwaggerResponseExample((int)HttpStatusCode.BadRequest, typeof(HealthCheckResponseBadRequestSample))]
-        public IActionResult Put(Guid UserKey, [FromBody] UserRequestModel userRequest)
+        public IActionResult Put(Guid HealthCheckKey, [FromBody] HealthCheckRequestModel healthCheckRequest)
         {
             if (ModelState.IsValid)
             {
-                var response = _userAppService.Update(UserKey, userRequest);
+                var response = _healthCheckAppService.Update(HealthCheckKey, healthCheckRequest);
                 return new ObjectResult(response) { StatusCode = response.StatusCode() };
             }
 
@@ -87,16 +86,16 @@ namespace MonitsManager.Presentation.Controllers
         }
 
         /// <summary>
-        /// Delete user
+        /// Delete healthCheck
         /// </summary>
-        [HttpDelete("{UserKey}")]
+        [HttpDelete("{HealthCheckKey}")]
         [SwaggerResponse((int)HttpStatusCode.Accepted, Type = typeof(AcceptResponseModel))]
-        [SwaggerResponseExample((int)HttpStatusCode.Accepted, typeof(UserResponseCreatedSample))]
+        [SwaggerResponseExample((int)HttpStatusCode.Accepted, typeof(HealthCheckResponseCreatedSample))]
         [SwaggerResponse((int)HttpStatusCode.NotFound, Type = typeof(NotFoundResponseModel))]
         [SwaggerResponseExample((int)HttpStatusCode.NotFound, typeof(HealthCheckResponseNotFoundSample))]
-        public IActionResult Delete(Guid UserKey)
+        public IActionResult Delete(Guid HealthCheckKey)
         {
-            var response = _userAppService.Delete(UserKey);
+            var response = _healthCheckAppService.Delete(HealthCheckKey);
             return new ObjectResult(response) { StatusCode = response.StatusCode() };
         }
     }

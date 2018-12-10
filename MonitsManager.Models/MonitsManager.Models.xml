@@ -4,6 +4,51 @@
         <name>MonitsManager.Models</name>
     </assembly>
     <members>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckRequestModel.Name">
+            <summary>
+            Name HealthCheck.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckRequestModel.Endpoint">
+            <summary>
+            Endpoint HealthCheck.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckRequestModel.IntervalInMilliseconds">
+            <summary>
+            Interval in Milliseconds between the requests.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.HealthCheckKey">
+            <summary>
+            HealthCheckKey.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.Name">
+            <summary>
+            Name HealthCheck.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.Endpoint">
+            <summary>
+            Endpoint HealthCheck.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.IntervalInMilliseconds">
+            <summary>
+            Interval in Milliseconds between the requests.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.CreateAt">
+            <summary>
+            CreateAt.
+            </summary>
+        </member>
+        <member name="P:MonitsManager.Models.HealthCheck.HealthCheckResponseModel.UpdateAt">
+            <summary>
+            UpdateAt.
+            </summary>
+        </member>
         <member name="P:MonitsManager.Models.User.UserRequestModel.Name">
             <summary>
             Name user.
